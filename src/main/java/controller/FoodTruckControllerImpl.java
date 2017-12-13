@@ -14,6 +14,7 @@ public class FoodTruckControllerImpl implements  FoodTruckController {
     private Scanner scanner = new Scanner(System.in);
 
     // get food trucks that are operating NOW.
+    @Override
     public void getFoodTruckOpenNow() throws Exception {
         List<FoodTruck> foodTrucks = foodTruckFindService.getAvailableFoodTruckOpenNow();
         displayResult(foodTrucks, 10);

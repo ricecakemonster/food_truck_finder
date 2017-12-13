@@ -23,6 +23,7 @@ public class FoodTruckFindServiceImpl implements FoodTruckFindService {
     private Date now =  new Date();
     private final String PATTERN = "HH:mm";
 
+    @Override
     public List<FoodTruck> getAvailableFoodTruckOpenNow() throws Exception {
         List<FoodTruck> foodTrucksOpenToday = getAvailableFoodTruckForToday();
         List<FoodTruck> availableFoodTruckOpenNow = new ArrayList<>();
