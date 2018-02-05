@@ -1,5 +1,6 @@
 package service;
 
+import consts.General;
 import model.FoodTruck;
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -77,7 +78,7 @@ public class FoodTruckFindServiceImpl implements FoodTruckFindService {
         StringBuilder result = new StringBuilder();
         try {
             conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
+            conn.setRequestMethod(General.GET);
             int responseCode = conn.getResponseCode();
 
             if (responseCode / 100 == 2) {

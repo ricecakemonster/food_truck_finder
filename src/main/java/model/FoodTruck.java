@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 @ToString
@@ -19,7 +20,7 @@ public class FoodTruck {
     private String closingTime;
     private String openingTime;
 
-    public FoodTruck(JSONObject jsonObject){
+    public FoodTruck(JSONObject jsonObject) throws JSONException {
         this.dayOfWeek = (String) jsonObject.get(FoodTruckJsonKeys.DAY_OF_WEEK_STR);
         this.name = (String) jsonObject.get(FoodTruckJsonKeys.NAME);
         this.location = (String) jsonObject.get(FoodTruckJsonKeys.LOCATION);

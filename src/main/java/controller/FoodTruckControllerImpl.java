@@ -1,5 +1,6 @@
 package controller;
 
+import consts.General;
 import model.FoodTruck;
 import service.FoodTruckFindService;
 import service.FoodTruckFindServiceImpl;
@@ -48,7 +49,7 @@ public class FoodTruckControllerImpl implements  FoodTruckController {
 
             while (attemps < 4) {
                 answer = scanner.next().toLowerCase();
-                if(answer.equals("n") || answer.equals("y")) {
+                if(answer.equals(General.NO) || answer.equals(General.YES)) {
                     break;
                 }
                 attemps ++;
@@ -56,11 +57,11 @@ public class FoodTruckControllerImpl implements  FoodTruckController {
                     System.out.print("Please Enter \033[31mY\033[0m or \033[31mN\033[0m: ");
                 }
             }
-            if(answer.equals("y")){
+            if(answer.equals(General.YES)){
                 getOperatingHours(foodTrucks);
                 askUserAndDisplayHours(foodTrucks);
             }
-            else if(answer.equals("n")){
+            else if(answer.equals(General.NO)){
                 System.exit(0);
             }
         }
